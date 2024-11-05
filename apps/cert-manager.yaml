@@ -16,7 +16,7 @@ spec:
         releaseName: cert-manager
         valuesObject:
           installCRDs: true
-    - repoURL: git@github.com:timmhirsens/gitops-demo-infra-team.git
+    - repoURL: https://github.com/timmhirsens/gitops-demo-team-infra.git
       targetRevision: HEAD
       path: manifests/cert-manager
   destination:
