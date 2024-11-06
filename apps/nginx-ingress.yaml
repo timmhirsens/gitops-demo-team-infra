@@ -21,7 +21,6 @@ spec:
           service:
             annotations:
               kubernetes.digitalocean.com/load-balancer-id: "haeger-demo-lb-nginx"
-              service.beta.kubernetes.io/do-loadbalancer-name: "haeger-demo-lb-nginx"
 
   destination:
     server: "https://kubernetes.default.svc"
