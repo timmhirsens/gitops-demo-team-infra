@@ -5,7 +5,7 @@ metadata:
   name: ingress-nginx
   namespace: argocd
   finalizers:
-  - resources-finalizer.argocd.argoproj.io
+    - resources-finalizer.argocd.argoproj.io
 spec:
   project: default
   source:
@@ -21,15 +21,15 @@ spec:
           service:
             annotations:
               kubernetes.digitalocean.com/load-balancer-id: "haeger-demo-lb-nginx"
+              service.beta.kubernetes.io/do-loadbalancer-name: "haeger-demo-lb-nginx"
 
   destination:
     server: "https://kubernetes.default.svc"
     namespace: ingress-nginx
 
   syncPolicy:
-      syncOptions:
+    syncOptions:
       - CreateNamespace=true
-      automated:
-        prune: true
-        selfHeal: true
-
+    automated:
+      prune: true
+      selfHeal: true
